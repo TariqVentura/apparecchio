@@ -11,115 +11,216 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../resources/css/dashboard.css">
     <script src="../../controllers/dashboard/categoria.js"></script>
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--<title>Dashboard Sidebar Menu</title>-->
 </head>
 
 <body>
-    <main class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <img src="../../resources/images/logo.jpeg" width="180" height="70" alt="logo">
-                <a class="navbar-brand" href="#">Categorias</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../dashboard/Productos.html">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../dashboard/Categorias.html">Categorias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../dashboard/Marcas.html">Marcas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Clientes</a>
-                        </li>
-                    </ul>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <!--<img src="logo.png" alt="">-->
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Apparecchio</span>
                 </div>
             </div>
-        </nav>
-        <div class="container-fluid py-3 border-bottom d-none d-lg-block d-print-block">
-        </div>
-        <h3 class="center-align">Categorias</h3>
-        <div class="row">
-            <div class="col-6 d-flex flex-nowrap">
-                <form method="post" id="search-form">
-                    <div class="input-field  flex-nowrap col-12">
-                        <img src="https://img.icons8.com/ios-filled/32/null/search--v1.png" />
-                        <input id="search" type="text" name="Buscar " required>
-                        <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar">
-                            <img src="https://img.icons8.com/glyph-neue/40/null/ok--v1.png" />
-                        </button>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="../dashboard/Productos.html">
+                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <span class="text nav-text" >Productos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Categorias</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon'></i>
+                            <span class="text nav-text">Marcas</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-heart icon'></i>
+                            <span class="text nav-text">Clientes</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
                     </div>
-                </form>
-            </div>
-            <div class="col-2">
-                <div class="input-field center-align col-2">
-                    <button class="border-0 bg-light" onclick="openCreate()"><img
-                            src="https://img.icons8.com/ios-glyphs/40/null/add--v1.png" /></button>
-                </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
             </div>
         </div>
-        <div class="container-fluid py-3 border-bottom d-none d-lg-block d-print-block"></div>
-        <div class="container">
+
+    </nav>
+
+    <section class="home">
+        <div class="text">Categorias</div>
+        <main class="container">
+            <div class="container-fluid py-3 border-bottom d-none d-lg-block d-print-block">
+            </div>
             <div class="row">
-                <div class="col-6">
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="../../resources/images/refrigerador.png" width="200" class="img-fluid rounded-start"
-                                    alt="Refrigerador">
-                            </div>
-                            <div class="col-md-5">
-                                <div class="card-body">
-                                    <h5 class="card-title">Refrigeradores</h5>
+                <div class="col-6 d-flex flex-nowrap">
+                    <form method="post" id="search-form">
+                        <div class="input-field  flex-nowrap col-12">
+                            <img src="https://img.icons8.com/ios-filled/32/null/search--v1.png" />
+                            <input id="search" type="text" name="Buscar " required>
+                            <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar">
+                                <img src="https://img.icons8.com/glyph-neue/40/null/ok--v1.png" />
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <div class="input-field center-align col-2">
+                        <button class="border-0 bg-light" onclick="openCreate()"><img
+                                src="https://img.icons8.com/ios-glyphs/40/null/add--v1.png" /></button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid py-3 border-bottom d-none d-lg-block d-print-block"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="../../resources/images/refrigerador.png" width="200"
+                                        class="img-fluid rounded-start" alt="Refrigerador">
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <button class="border-0 bg-light" onclick="openUpdate()"><img
-                                        src="https://img.icons8.com/ios-glyphs/32/null/refresh--v1.png" /></button><br><br>
-                                <button class="border-0 bg-light" onclick="openDelete()"><img
-                                        src="https://img.icons8.com/ios-filled/30/null/waste.png" /></button>
+                                <div class="col-md-5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Refrigeradores</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="border-0 bg-light" onclick="openUpdate()"><img
+                                            src="https://img.icons8.com/ios-glyphs/32/null/refresh--v1.png" /></button><br><br>
+                                    <button class="border-0 bg-light" onclick="openDelete()"><img
+                                            src="https://img.icons8.com/ios-filled/30/null/waste.png" /></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="../../resources/images/cocina.png" width="135" class="img-fluid rounded-start"
-                                    alt="Cocina">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cocinas</h5>
+                    <div class="col-6">
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="../../resources/images/cocina.png" width="135"
+                                        class="img-fluid rounded-start" alt="Cocina">
                                 </div>
-                            </div>
-                            <div class="col-md-2">
-                                <button class="border-0 bg-light" onclick="openUpdate()"><img
-                                        src="https://img.icons8.com/ios-glyphs/32/null/refresh--v1.png" /></button><br><br>
-                                <button class="border-0 bg-light" onclick="openDelete()"><img
-                                        src="https://img.icons8.com/ios-filled/30/null/waste.png" /></button>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cocinas</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="border-0 bg-light" onclick="openUpdate()"><img
+                                            src="https://img.icons8.com/ios-glyphs/32/null/refresh--v1.png" /></button><br><br>
+                                    <button class="border-0 bg-light" onclick="openDelete()"><img
+                                            src="https://img.icons8.com/ios-filled/30/null/waste.png" /></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-    </main>
+        </main>
+    </section>
+
+    <script>
+        const body = document.querySelector('body'),
+            sidebar = body.querySelector('nav'),
+            toggle = body.querySelector(".toggle"),
+            searchBtn = body.querySelector(".search-box"),
+            modeSwitch = body.querySelector(".toggle-switch"),
+            modeText = body.querySelector(".mode-text");
+
+
+        toggle.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        })
+
+        searchBtn.addEventListener("click", () => {
+            sidebar.classList.remove("close");
+        })
+
+        modeSwitch.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (body.classList.contains("dark")) {
+                modeText.innerText = "Light mode";
+            } else {
+                modeText.innerText = "Dark mode";
+
+            }
+        });
+    </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
